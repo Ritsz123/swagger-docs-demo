@@ -26,3 +26,33 @@ paths:
       responses:
         "200": #status code
           description: returns an object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  followers:
+                    type: string
+                  follows:
+                    type: string
+  /{token}:
+    get:
+      summary: returns whatever parameter is passed
+      parameters:
+        - name: token
+          default: default
+          in: path
+          schema:
+            type: string
+      responses:
+        "200": #status code
+          description: returns an object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  params:
+                    type: string
